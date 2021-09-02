@@ -18,7 +18,7 @@ jobs:
         uses: actions/setup-ruby@v1
         with: 
           bundler-cache: true
-      - run: bundlex exec rake
+      - run: bundle exec rake
  - name: Build and run tests
         env:
           DATABASE_URL: postgres://postgres:@localhost:5432/test
