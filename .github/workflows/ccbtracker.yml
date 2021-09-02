@@ -1,77 +1,56 @@
-name: Ruby
+name: Ruby Tests
 
 on:
-  push:
-    branches:
-    - main
   pull_request:
     branches:
-    - main
+      - 'main'
+  push:
+    branches:
+      - 'main'
 
 jobs:
-  test:
-
+  build:
     runs-on: ubuntu-latest
-    strategy:
-      matrix:
-        ruby-version:
-        - '3.0.2'
-        node-version:
-        - '14.x'
-        database-name:
-        - ccb_tracker
-        database-password:
-        - postgres
-        database-user:
-        - postgres
-        database-host:
-        - 127.0.0.1
-        database-port:
-        - 5432
 
     services:
       postgres:
-        image: postgres:latest
+        image: postgres
         env:
-          POSTGRES_DB: ${{ matrix.database-name }}
-          POSTGRES_USER: ${{ matrix.database-user }}
-          POSTGRES_PASSWORD: ${{ matrix.database-password }}
-        ports:
-          - 5432:5432
-        # Set health checks to wait until postgres has started
-        options:
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres
+        options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
+        ports:
+          - 5432:5432
 
     steps:
-    - name: Check out Git Repository
-      uses: actions/checkout@v2
+    - uses: actions/checkout@v2
 
-    - name: Set up Ruby, Bundler and Rails
-      uses: ruby/setup-ruby@v1
+    - uses: ruby/setup-ruby@v1
       with:
-        ruby-version: ${{ matrix.ruby-version }}
-        bundler-cache: true # runs 'bundle install' and caches installed gems automatically
+        bundler-cache: true
 
-    - name: Set up Node
-      uses: actions/setup-node@v1
-      with:
-        node-version: ${{ matrix.node-version }}
-
-    - name: Install packages
+    - name: Install PostgreSQL client
       run: |
-        yarn install --check-files
+        sudo apt-get -yqq install libpq-dev
 
-    - name: Setup test database
+    - name: CCB Tracker
       env:
+        PGHOST: localhost
+        PGUSER: postgres
+        PGPASSWORD: postgres
         RAILS_ENV: test
-        DATABASE_NAME_TEST: ${{ matrix.database-name }}
-        DATABASE_USER: ${{ matrix.database-user }}
-        DATABASE_PASSWORD: ${{ matrix.database-password }}
-        DATABASE_HOST: ${{ matrix.database-host }}
-        DATABASE_PORT: ${{ matrix.database-port }}
-        POSTGRES_DB: ${{ matrix.database-name }}
       run: |
-        bundle exec rails db:migrate
+        bin/rails db:setup
+
+    - name: Run Tests
+      env:
+        PGHOST: localhost
+        PGUSER: postgres
+        PGPASSWORD: postgres
+        RAILS_ENV: test
+      run: |
+        bundle exec rspec
