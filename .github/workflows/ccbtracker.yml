@@ -1,56 +1,33 @@
 name: Ruby Tests
-
-on:
-  pull_request:
-    branches:
-      - 'main'
-  push:
-    branches:
-      - 'main'
-
+on: [push, pull_request]
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
-
     services:
-      postgres:
-        image: postgres
-        env:
-          POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
+      db:
+        image: postgres:13
+        ports: ["5432:5432"]
         options: >-
           --health-cmd pg_isready
           --health-interval 10s
           --health-timeout 5s
           --health-retries 5
-        ports:
-          - 5432:5432
-
     steps:
-    - uses: actions/checkout@v2
-
-    - uses: ruby/setup-ruby@v1
-      with:
-        bundler-cache: true
-
-    - name: Install PostgreSQL client
-      run: |
-        sudo apt-get -yqq install libpq-dev
-
-    - name: CCB Tracker
-      env:
-        PGHOST: localhost
-        PGUSER: postgres
-        PGPASSWORD: postgres
-        RAILS_ENV: test
-      run: |
-        bin/rails db:setup
-
-    - name: Run Tests
-      env:
-        PGHOST: localhost
-        PGUSER: postgres
-        PGPASSWORD: postgres
-        RAILS_ENV: test
-      run: |
-        bundle exec rspec
+      - uses: actions/checkout@v1
+      - name: Set up Ruby
+        uses: actions/setup-ruby@v1
+        with:
+          ruby-version: '3.0.2' 
+ - name: Build and run tests
+        env:
+          DATABASE_URL: postgres://postgres:@localhost:5432/test
+          POSTGRES_PASSWORD: postgres
+          RAILS_ENV: test
+        run: |
+          sudo apt-get -yqq install libpq-dev
+          gem install bundler:2.2.22
+          bundle install --jobs 4 --retry 3
+          curl -o - 'http://localhost:8981/solr/admin/cores?action=CREATE&name=test&configSet=basic_configs'
+          bundle exec rake db:create
+          bundle exec rake db:migrate
+          bundle exec rspec spec
