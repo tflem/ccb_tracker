@@ -12,6 +12,7 @@ development:
 test:
   <<: *default
   database: ccb_tracker_test
+  host: 127.0.0.1
 
 production:
   <<: *default
