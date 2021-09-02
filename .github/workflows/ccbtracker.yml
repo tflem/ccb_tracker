@@ -73,7 +73,6 @@ jobs:
       - name: Setup test database
         env:
           RAILS_ENV: test
-          PGHOST: 127.0.0.1
           PGUSER: postgres
         run: |
           bin/rails db:setup
