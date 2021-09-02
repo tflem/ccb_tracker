@@ -15,7 +15,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Set up Ruby
-        uses: actions/setup-ruby@v1
+        uses: ruby/setup-ruby@477b21f02be01bcb8030d50f37cfec92bfa615b6
         with: 
           bundler-cache: true
  - name: Build and run tests
@@ -27,7 +27,6 @@ jobs:
           sudo apt-get -yqq install libpq-dev
           gem install bundler:2.2.22
           bundle install --jobs 4 --retry 3
-          curl -o - 'http://localhost:8981/solr/admin/cores?action=CREATE&name=test&configSet=basic_configs'
           bundle exec rake db:create
           bundle exec rake db:migrate
           bundle exec rspec spec
