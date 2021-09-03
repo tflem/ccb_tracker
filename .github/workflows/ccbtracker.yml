@@ -15,12 +15,12 @@ jobs:
     steps:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
-          with:
-            node-version: '14'
+        with:
+          node-version: '14'
       - run: npm install -g yarn
       - run: yarn install
       - run: yarn build
-      
+
       - uses: actions/checkout@v1
 
       - uses: actions/setup-ruby@v1
