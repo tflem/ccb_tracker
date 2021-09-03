@@ -13,6 +13,14 @@ jobs:
           POSTGRES_PASSWORD: postgres
         options: --health-cmd pg_isready --health-interval 10s --health-timeout 5s --health-retries 5
     steps:
+      - uses: actions/checkout@master
+      - uses: actions/setup-node@master
+          with:
+            node-version: '14'
+      - run: npm install -g yarn
+      - run: yarn install
+      - run: yarn build
+      
       - uses: actions/checkout@v1
 
       - uses: actions/setup-ruby@v1
@@ -45,13 +53,21 @@ jobs:
 
       - name: Test & publish code coverage
         uses: paambaati/codeclimate-action@v2.7.5
-          with:
-            node-version: '12'
-        - run: npm install -g yarn
-        - run: yarn install
-        - run: yarn build
         env:
           CC_TEST_REPORTER_ID: CC_TEST_REPORTER_ID
         with:
           coverageCommand: yarn run coverage
           debug: true
+
+coverage:
+    needs: [ test ]
+    name: coverage
+    runs-on: ubuntu-latest
+    steps:
+    
+    - uses: paambaati/codeclimate-action@v2.7.2
+      env:
+        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+      with:
+        coverageCommand: yarn run coverage
+        debug: true
