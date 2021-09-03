@@ -31,6 +31,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'simplecov', '~> 0.21.2'
+  gem 'simplecov-console', '~> 0.9.1'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
