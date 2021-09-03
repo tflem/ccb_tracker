@@ -1,4 +1,4 @@
-name: CI
+name: build
 on: [push]
 jobs:
   build:
@@ -42,3 +42,14 @@ jobs:
           RAILS_ENV: test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
+
+      - name: Setup Code Climate test-reporter
+        run: |
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        chmod +x ./cc-test-reporter
+        ./cc-test-reporter before-build      
+
+      - name: Publish code coverage
+        run: |
+        export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
+        ./cc-test-reporter after-build -r "e16dd2cbeedd5eddfb14cb682b6e5cd8a1e7a487c2944f907d54c53a60e93556"
