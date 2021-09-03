@@ -42,10 +42,4 @@ jobs:
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres      
-
-      - name: Build and test with RSpec
-        run: |
-        gem install bundler
-        bundle install --jobs 4 --retry 3
-        bundle exec rspec  
+          POSTGRES_PASSWORD: postgres
