@@ -44,15 +44,12 @@ jobs:
           POSTGRES_PASSWORD: postgres
 
       - name: Test & publish code coverage
-        steps:
-          - uses: actions/checkout@master
-          - uses: actions/setup-node@master
+        uses: paambaati/codeclimate-action@v2.7.5
           with:
             node-version: '12'
-          - run: npm install -g yarn
-          - run: yarn install
-          - run: yarn build
-        uses: paambaati/codeclimate-action@v2.7.5
+        - run: npm install -g yarn
+        - run: yarn install
+        - run: yarn build
         env:
           CC_TEST_REPORTER_ID: CC_TEST_REPORTER_ID
         with:
