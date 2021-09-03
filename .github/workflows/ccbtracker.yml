@@ -45,6 +45,7 @@ jobs:
 
       - name: Setup Code Climate test-reporter
         run: |
+          export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
           curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
           chmod +x ./cc-test-reporter
           ./cc-test-reporter before-build
@@ -57,6 +58,8 @@ jobs:
           POSTGRES_PASSWORD: postgres
 
       - name: Publish code coverage
+        env:
+          CC_TEST_REPORTER_ID: $secrets_CODE_CLIMATE_ID
         run: |
           export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
           ./cc-test-reporter after-build -r $CC_TEST_REPORTER_ID
