@@ -58,16 +58,3 @@ jobs:
         with:
           coverageCommand: yarn run coverage
           debug: true
-
-coverage:
-    needs: [ test ]
-    name: coverage
-    runs-on: ubuntu-latest
-    steps:
-    
-    - uses: paambaati/codeclimate-action@v2.7.2
-      env:
-        CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-      with:
-        coverageCommand: yarn run coverage
-        debug: true
