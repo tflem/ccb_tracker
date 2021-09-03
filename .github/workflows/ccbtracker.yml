@@ -42,20 +42,13 @@ jobs:
           RAILS_ENV: test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-coverage:
-  needs: [ test ]
-  name: coverage
-  runs-on: ubuntu-latest
-  steps:
-  - uses: actions/checkout@master
-  - uses: actions/setup-node@master
-    with:
-      node-version: '14'
-    - run: npm install -g yarn
-    - run: yarn install
-    - run: yarn build
-    - uses: paambaati/codeclimate-action@v2.5.7
-      env:
-        CC_TEST_REPORTER_ID: ff4078a0039a2112e9e8d2b0b9125b6b8c7dcc4ae72b1108bbd013d42cfeef72
-      with:
-        coverageCommand: yarn coverage
+
+      - name: Setup Code Climate test-reporter
+        run: |
+        curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+        chmod +x ./cc-test-reporter
+        ./cc-test-reporter before-build      
+
+      - name: Publish code coverage
+        env:
+          CC_TEST_REPORTER_ID: ff4078a0039a2112e9e8d2b0b9125b6b8c7dcc4ae72b1108bbd013d42cfeef72
