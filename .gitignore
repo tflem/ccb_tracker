@@ -29,6 +29,9 @@
 # Ignore master key for decrypting credentials and more.
 /config/master.key
 
+# Ignore Simple Coverage
+/coverage
+
 # Vite Ruby
 /public/vite
 /public/vite-dev
