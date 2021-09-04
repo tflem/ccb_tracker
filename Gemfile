@@ -31,7 +31,7 @@ group :test do
   gem 'selenium-webdriver'
   gem 'webdrivers'
   gem 'simplecov', '~> 0.21.2'  
-  gem 'simplecov-json', '~> 0.2.3'
+  gem 'simplecov_json_formatter', '~> 0.1.3'
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
