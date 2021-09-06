@@ -1,13 +1,22 @@
-# .github/workflows/deploy.yml
+name: Build and Deploy to Heroku
+
+on:
+  push:
+    branches:
+      - main
+
 jobs:
-  heroku-deploy:
+  app:
+    name: Build and deploy Shiny app
     runs-on: ubuntu-latest
     steps:
-      - name: Check out repository
+      - name: Checkout
         uses: actions/checkout@v2
-      - name: Deploy to Heroku
+      - name: Build and push Docker to Heroku
         uses: akhileshns/heroku-deploy@v3.12.12
         with:
-          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_app_name: ${{ secrets.HEROKU_APP_NAME }}
+          appdir: "."
+          heroku_api_key: ${{ secrets.HEROKU_API_KEY }}
           heroku_email: ${{ secrets.HEROKU_EMAIL }}
+          usedocker: true
