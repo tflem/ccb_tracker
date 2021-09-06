@@ -62,12 +62,3 @@ jobs:
         run: |
           export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
           ./cc-test-reporter after-build -r $CC_TEST_REPORTER_ID
-
-      - name: Deploy to Heroku
-
-        - uses: actions/checkout@v2
-        - uses: akhileshns/heroku-deploy@v3.12.12 # This is the action
-          with:
-            heroku_api_key: ${{secrets.HEROKU_API_KEY}}
-            heroku_app_name: ccb-tracker
-            heroku_email: ${{ secrets.HEROKU_EMAIL }}
