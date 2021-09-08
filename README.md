@@ -42,4 +42,4 @@ How to prepare (create and migrate) DB for `development` and `test` environments
 % rails db:migrate
 ```
 
-You can view a staged demo at http://ccbtracker.herokuapp.com.
+You can view a staged demo at http://ccb-tracker.herokuapp.com.
