@@ -13,6 +13,7 @@
 * PostgreSQL
 * Testing Framework: RSpec
 * CSS Framework: Windi CSS
+* Code Bundler: Vite Ruby
 
 ## Setup
 
