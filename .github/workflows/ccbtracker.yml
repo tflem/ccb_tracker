@@ -33,11 +33,12 @@ jobs:
         run: |
           gem install bundler
           bundle install
+          bundle exec vite install
 
       - name: Setup Database
         run: |
           cp config/database.yml.github-actions config/database.yml
-          bundle exec rake db:create          
+          bundle exec rake db:create
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
