@@ -16,4 +16,14 @@ class BalancesController < ApplicationController
       #notta notta yet
     end
   end
+
+  def show
+    @balance = Balance.find(params[:id])
+  end
+
+  private
+
+  def balance_params
+    params.require(:balance).permit(:name, :balance)
+  end
 end
