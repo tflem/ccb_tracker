@@ -10,10 +10,10 @@
 * Continuous Integration/Deployment: Github Actions/Heroku
 * Ruby on Rails 6.1.4
 * HTML5 and Sass
-* PostgreSQL
+* PostgreSQL 13.4
 * Testing Framework: RSpec
 * CSS Framework: Windi CSS
-* Code Bundler: Vite Ruby
+* Code Bundler: ⚡️ Vite Ruby ⚡️
 
 ## Setup
 
