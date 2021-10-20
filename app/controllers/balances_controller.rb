@@ -13,7 +13,8 @@ class BalancesController < ApplicationController
       flash[:notice] = "Your credit card balance has been created."
       redirect_to @balance
     else
-      #notta notta yet
+      flash.now[:alert] = "Your credit card balance has not been created."
+      render "new"
     end
   end
 
