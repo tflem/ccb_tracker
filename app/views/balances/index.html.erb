@@ -1,6 +1,35 @@
 <div class="flex">
   <div class="m-auto">
-    <h1 class="text-4xl">New Balance Data</h1>
-    <p class="text-2xl">This Is The Page for Viewing New Balance Data!</p>
+    <h1 class="text-4xl py-8">List of Balances</h1>
   </div>
+</div>
+
+<div class="md:px-32 py-4 w-full">
+  <div class="shadow overflow-hidden rounded border-b border-gray-200">
+    <table class="min-w-full bg-white">
+      <thead class="bg-teal-700 text-white">
+        <tr>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Amount</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Created</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Updated</th>
+          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Actions</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700">
+        <% @balances.each do |balance| %>
+          <tr>
+            <td class="text-left py-3 px-4"><%= link_to balance.name, balance, class: "hover:text-teal-800" %></td>
+            <td class="text-left py-3 px-4"><%= "$" %><%= balance.balance %></td>
+            <td class="text-left py-3 px-4"><%= time_ago_in_words balance.created_at %><%= " ago" %></td>
+            <td class="text-left py-3 px-4"><%= time_ago_in_words balance.updated_at %><%= " ago" %></td>
+            <td class="text-left py-3 px-4">
+              <%= link_to "Edit", "#" %> |
+              <%= link_to "Delete", "#" %>
+            </td>
+          </tr>
+        <% end %>
+     </tbody>
+   </table>
+ </div>
 </div>
