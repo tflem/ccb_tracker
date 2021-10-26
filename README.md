@@ -6,7 +6,7 @@
 
 > A new and improved credit card balance tracking application, developed with the following tools:
 
-* CSS Framework: Windi CSS 3.1.7 (Tailwind Alternative)
+* CSS Framework: Windi CSS (Tailwind Alternative) 3.1.7
 * Ruby on Rails 6.1.4
 * Ruby 3.0.2
 * HTML5 and Sass
