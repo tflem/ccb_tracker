@@ -23,6 +23,22 @@ class BalancesController < ApplicationController
     @balance = Balance.find(params[:id])
   end
 
+  def edit
+    @balance = Balance.find(params[:id])
+  end
+
+  def update
+    @balance = Balance.find(params[:id])
+
+    if @balance.update(balance_params)
+      flash[:notice] = "Your credit card balance has been updated."
+      redirect_to @balance
+    else
+      flash.now[:alert] = "Your credit card balance has not been updated."
+      render "edit"
+    end
+  end
+
   private
 
   def balance_params

@@ -1,4 +1,4 @@
 <% title_balance_show @balance.name, "Balances" %>
 
 <h1><%= @balance.name %></h1>
-<p><%= @balance.balance %></p>
+<p><%= number_to_currency(@balance.balance) %></p>
