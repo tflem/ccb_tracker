@@ -21,11 +21,19 @@ RSpec.describe "Users can create new balance data" do
     expect(page).to have_title title
   end
 
-  scenario "when providing invalid balance data" do
+  scenario "when providing invalid (blank) balance data" do
     click_button "Create Balance"
 
     expect(page).to have_content "Your credit card balance has not been created."
     expect(page).to have_content "Name can't be blank"
-    expect(page).to have_content "Balance can't be blank"
+    expect(page).to have_content "Balance is not a number"
+  end
+
+  scenario "when providing balances less than 0.00" do
+    fill_in "Balance", with: -5.00
+    click_button "Create Balance"
+
+    expect(page).to have_content "Your credit card balance has not been created."
+    expect(page).to have_content "Balance must be greater than or equal to 0.01"
   end
 end

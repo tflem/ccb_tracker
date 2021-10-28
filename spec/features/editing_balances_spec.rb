@@ -19,9 +19,16 @@ RSpec.describe "Our users can edit balances" do
     expect(page).to have_content 53.78
   end
 
-  scenario "with invalid balance data" do
+  scenario "with invalid (blank) balance data" do
     fill_in "Name", with: ""
     fill_in "Balance", with: ""
+    click_button "Update Balance"
+
+    expect(page).to have_content "Your credit card balance has not been updated."
+  end
+
+  scenario "with balance data less than 0.00" do
+    fill_in "Balance", with: -5.00
     click_button "Update Balance"
 
     expect(page).to have_content "Your credit card balance has not been updated."
