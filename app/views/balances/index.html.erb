@@ -20,7 +20,7 @@
         <% @balances.each do |balance| %>
           <tr>
             <td class="text-left py-3 px-4"><%= link_to balance.name, balance, class: "hover:text-teal-800" %></td>
-            <td class="text-left py-3 px-4"><%= number_to_currency(balance.balance) %></td>
+            <td class="text-left py-3 px-4"><%= number_to_currency(balance.amount) %></td>
             <td class="text-left py-3 px-4"><%= time_ago_in_words balance.created_at %><%= " ago" %></td>
             <td class="text-left py-3 px-4"><%= time_ago_in_words balance.updated_at %><%= " ago" %></td>
             <td class="text-left py-3 px-4">

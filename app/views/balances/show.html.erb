@@ -21,7 +21,7 @@
         <tr>
           <td class="text-left py-3 px-4"><%= @balance.id %></td>
           <td class="text-left py-3 px-4"><%= @balance.name %></td>
-          <td class="text-left py-3 px-4"><%= number_to_currency(@balance.balance) %></td>
+          <td class="text-left py-3 px-4"><%= number_to_currency(@balance.amount) %></td>
           <td class="text-left py-3 px-4"><%= time_ago_in_words @balance.created_at %><%= " ago" %></td>
         </tr>
      </tbody>

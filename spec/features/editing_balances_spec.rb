@@ -3,7 +3,7 @@ require "rails_helper"
 RSpec.describe "Our users can edit balances" do
   before do
     FactoryBot.create(:balance, name: "Costco Credit Card",
-                                balance: 67.45)
+                                amount: 67.45)
     visit "/"
     click_link "View Balances"
     click_link "Edit"
@@ -11,7 +11,7 @@ RSpec.describe "Our users can edit balances" do
 
   scenario "with valid balance data" do
     fill_in "Name", with: "Capital One"
-    fill_in "Balance", with: 53.78
+    fill_in "Amount", with: 53.78
     click_button "Update Balance"
 
     expect(page).to have_content "Your credit card balance has been updated."
@@ -21,14 +21,14 @@ RSpec.describe "Our users can edit balances" do
 
   scenario "with invalid (blank) balance data" do
     fill_in "Name", with: ""
-    fill_in "Balance", with: ""
+    fill_in "Amount", with: ""
     click_button "Update Balance"
 
     expect(page).to have_content "Your credit card balance has not been updated."
   end
 
-  scenario "with balance data less than 0.00" do
-    fill_in "Balance", with: -5.00
+  scenario "with invalid balance data less than 0.00" do
+    fill_in "Amount", with: -5.00
     click_button "Update Balance"
 
     expect(page).to have_content "Your credit card balance has not been updated."
