@@ -4,7 +4,7 @@ RSpec.describe "Users can create new balance data" do
   before do
     visit "/"
 
-    click_link "Learn More"
+    click_link "Add Balances"
   end
 
   scenario "with valid attributes" do
