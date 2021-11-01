@@ -39,6 +39,14 @@ class BalancesController < ApplicationController
     end
   end
 
+  def destroy
+    @balance = Balance.find(params[:id])
+    @balance.destroy
+
+    flash[:notice] = "Your credit card balance has been deleted."
+    redirect_to balances_path
+  end
+
   private
 
   def balance_params

@@ -9,27 +9,29 @@
     <table class="min-w-full bg-white">
       <thead class="bg-teal-700 text-white">
         <tr>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Name</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Amount</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Created</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Updated</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Actions</th>
+          <th class="text-center py-2 px-3 font-semibold text-sm">Name</th>
+          <th class="text-center py-2 px-3 font-semibold text-sm">Amount</th>
+          <th class="text-center py-2 px-3 font-semibold text-sm">Created</th>
+          <th class="text-center py-2 px-3 font-semibold text-sm">Updated</th>
+          <th class="text-center font-semibold text-sm">Actions</th>
+          <th class="text-center font-semibold text-sm">Actions</th>
         </tr>
       </thead>
       <tbody class="text-gray-700">
         <% @balances.each do |balance| %>
           <tr>
-            <td class="text-left py-3 px-4"><%= link_to balance.name, balance, class: "hover:text-teal-800" %></td>
-            <td class="text-left py-3 px-4"><%= number_to_currency(balance.amount) %></td>
-            <td class="text-left py-3 px-4"><%= time_ago_in_words balance.created_at %><%= " ago" %></td>
-            <td class="text-left py-3 px-4"><%= time_ago_in_words balance.updated_at %><%= " ago" %></td>
-            <td class="text-left py-3 px-4">
-              <%= link_to "Edit", edit_balance_path(balance) %> |
-              <%= link_to "Delete", "#" %>
-            </td>
+            <td class="text-center py-2 px-3 font-semibold"><%= link_to balance.name, balance, class: "hover:text-teal-800" %></td>
+            <td class="text-center"><%= number_to_currency(balance.amount) %></td>
+            <td class="text-center"><%= time_ago_in_words balance.created_at %><%= " ago" %></td>
+            <td class="text-center"><%= time_ago_in_words balance.updated_at %><%= " ago" %></td>
+            <td class="text-center"><%= link_to "Edit Balance", edit_balance_path(balance), class: "my-3 px-3 py-2 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800" %></td>
+            <td class="text-center"><%= button_to "Delete Balance", balance_path(balance), method: :delete, data: { confirm: "Sure?" }, class: "my-3 px-3 py-2 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800" %></td>
           </tr>
         <% end %>
      </tbody>
    </table>
  </div>
+ <button class="my-4 px-4 py-3 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800">
+   <%= link_to "Add Balances", new_balance_path %>
+ </button>
 </div>

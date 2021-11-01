@@ -11,23 +11,26 @@
     <table class="min-w-full bg-white">
       <thead class="bg-teal-700 text-white">
         <tr>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">ID Number</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Credit Card Name</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Credit Card Amount</th>
-          <th class="text-left py-3 px-4 uppercase font-semibold text-sm">Time Created</th>
+          <th class="text-center py-3 px-4 font-semibold text-sm">ID Number</th>
+          <th class="text-center py-3 px-4 font-semibold text-sm">Credit Card Name</th>
+          <th class="text-center py-3 px-4 font-semibold text-sm">Credit Card Amount</th>
+          <th class="text-center py-3 px-4 font-semibold text-sm">Time Created</th>
         </tr>
       </thead>
       <tbody class="text-gray-700">
         <tr>
-          <td class="text-left py-3 px-4"><%= @balance.id %></td>
-          <td class="text-left py-3 px-4"><%= @balance.name %></td>
-          <td class="text-left py-3 px-4"><%= number_to_currency(@balance.amount) %></td>
-          <td class="text-left py-3 px-4"><%= time_ago_in_words @balance.created_at %><%= " ago" %></td>
+          <td class="text-center py-3 px-4"><%= @balance.id %></td>
+          <td class="text-center py-3 px-4"><%= @balance.name %></td>
+          <td class="text-center py-3 px-4"><%= number_to_currency(@balance.amount) %></td>
+          <td class="text-center py-3 px-4"><%= time_ago_in_words @balance.created_at %><%= " ago" %></td>
         </tr>
      </tbody>
    </table>
  </div>
- <button class="my-4 px-4 py-3 text-sm font-semibold text-center text-white uppercase transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800">
-   <%= link_to "View All Balances", balances_path %>
+ <button class="my-4 px-4 py-3 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800">
+   <%= link_to "Add Balances", new_balance_path %>
+ </button>
+ <button class="my-4 px-4 py-3 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800">
+   <%= link_to "View Balances", balances_path %>
  </button>
 </div>
