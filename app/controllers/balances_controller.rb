@@ -1,4 +1,6 @@
 class BalancesController < ApplicationController
+  before_action :set_balance, only: %i[show edit update destroy]
+
   def index
     @balances = Balance.all
   end
@@ -20,16 +22,12 @@ class BalancesController < ApplicationController
   end
 
   def show
-    @balance = Balance.find(params[:id])
   end
 
   def edit
-    @balance = Balance.find(params[:id])
   end
 
   def update
-    @balance = Balance.find(params[:id])
-
     if @balance.update(balance_params)
       flash[:notice] = "Your credit card balance has been updated."
       redirect_to @balance
@@ -39,8 +37,7 @@ class BalancesController < ApplicationController
     end
   end
 
-  def destroy
-    @balance = Balance.find(params[:id])
+  def destroy    
     @balance.destroy
 
     flash[:notice] = "Your credit card balance has been deleted."
@@ -48,6 +45,13 @@ class BalancesController < ApplicationController
   end
 
   private
+
+  def set_balance
+    @balance = Balance.find(params[:id])
+  rescue ActiveRecord::RecordNotFound
+    flash[:alert] = "The balance you're trying to view does not exist."
+    redirect_to balances_path
+  end
 
   def balance_params
     params.require(:balance).permit(:name, :amount)
