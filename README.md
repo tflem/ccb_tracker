@@ -6,14 +6,14 @@
 
 > A new and improved credit card balance tracking application, developed with the following tools:
 
-* CSS Framework: Windi CSS (Tailwind Alternative) 3.2.1
-* Ruby on Rails 6.1.4
-* Ruby 3.0.2
-* HTML5 and Sass
-* PostgreSQL (Tested With Version 13.x)
-* Testing Framework: RSpec (RSpec Rails 5.0)
-* Code Bundler: Vite ⚡️ Ruby 2.6.13/3.0.3
-* Continuous Integration/Deployment: Github Actions/Heroku
+- CSS Framework: Windi CSS (Tailwind Alternative) 3.2.1
+- Ruby on Rails 6.1.4
+- Ruby 3.0.2
+- HTML5 and Sass
+- PostgreSQL (Tested With Version 13.x)
+- Testing Framework: RSpec (RSpec Rails 5.0)
+- Code Bundler: Vite ⚡️ Ruby 2.6.13/3.0.3
+- Continuous Integration/Deployment: Github Actions/Heroku
 
 ## Setup
 
@@ -26,13 +26,13 @@ How to run tests:
 How to run the development console:
 
 ```
-% rails console
+% rails console or rails c for short
 ```
 
 How to run the development server:
 
 ```
-% rails server
+% rails server or rails s for short
 ```
 
 How to prepare (create and migrate) DB for `development` and `test` environments:
