@@ -1,0 +1,26 @@
+<div class="flex justify-center">
+  <div class="w-128 p-6">
+    <%= form_with(model: [balance, note], local: true) do |form| %>
+      <% if balance.errors.any? %>
+        <div class="w-full text-center py-3 text-red-500">
+          <h2>You've got <%= pluralize(note.errors.count, "error") %>
+    here friend:</h2>
+          <ul>
+            <% note.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="field">
+        <%= form.label :name %>
+        <%= form.text_field :name, class: "block border border-gray-300 w-full p-3 rounded mb-4" %>
+      </div>
+      <div class="field">
+        <%= form.label :description %>
+        <%= form.text_field :description, class: "block border border-gray-300 w-full p-3 rounded mb-4" %>
+      </div>
+      <%= form.submit class: "w-full text-center py-3 rounded bg-teal-600 text-white hover:bg-teal-800 focus:outline-none" %>
+    <% end %>
+  </div>
+</div>

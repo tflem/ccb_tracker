@@ -31,6 +31,9 @@
    <%= link_to "Add Balances", new_balance_path %>
  </button>
  <button class="my-4 px-4 py-3 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800">
+   <%= link_to "Add New Note", new_balance_note_path(@balance) %>
+ </button>
+ <button class="my-4 px-4 py-3 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800">
    <%= link_to "View Balances", balances_path %>
  </button>
 </div>
