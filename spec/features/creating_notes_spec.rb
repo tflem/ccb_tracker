@@ -25,4 +25,13 @@ RSpec.describe "Our users can create new notes" do
     expect(page).to have_content "Name can't be blank"
     expect(page).to have_content "Description can't be blank"
   end
+
+  scenario "when providing invalid description lengths" do
+    fill_in "Name", with: "Gas Card"
+    fill_in "Description", with: "Use it."
+    click_button "Create Note"
+
+    expect(page).to have_content "Your note has not been created."
+    expect(page).to have_content "Description is too short"
+  end
 end

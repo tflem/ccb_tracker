@@ -1,0 +1,34 @@
+<div class="flex">
+  <div class="m-auto">
+    <h1 class="text-4xl py-8">Note Details</h1>
+  </div>
+</div>
+
+<div class="md:px-32 py-4 w-full">
+  <div class="shadow overflow-hidden rounded border-b border-gray-200">
+    <table class="min-w-full bg-white">
+      <thead class="bg-teal-700 text-white">
+        <tr>
+          <th class="text-center py-3 px-4 font-semibold text-sm">Balance Name</th>
+          <th class="text-center py-3 px-4 font-semibold text-sm">Note Name</th>
+          <th class="text-center py-3 px-4 font-semibold text-sm">Description</th>
+          <th class="text-center py-3 px-4 font-semibold text-sm">Time Created</th>
+        </tr>
+      </thead>
+      <tbody class="text-gray-700">
+        <tr>
+          <td class="text-center py-3 px-4"><%= @balance.name %></td>
+          <td class="text-center py-3 px-4"><%= @note.name %></td>
+          <td class="text-center py-3 px-4"><%= simple_format(@note.description) %></td>
+          <td class="text-center py-3 px-4"><%= time_ago_in_words @balance.created_at %><%= " ago" %></td>
+        </tr>
+     </tbody>
+   </table>
+ </div>
+ <button class="my-4 px-4 py-3 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800">
+   <%= link_to "View This Balance", balance_path(@balance) %>
+ </button>
+ <button class="my-4 px-4 py-3 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800">
+   <%= link_to "View All Balances", balances_path %>
+ </button>
+</div>
