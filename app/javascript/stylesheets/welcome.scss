@@ -1,0 +1,8 @@
+// Place all the styles related to the welcome controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: https://sass-lang.com/
+.cta-btn {
+  @apply my-4 px-4 py-3 text-sm font-semibold text-center text-white
+         transition duration-200 ease-in-out bg-teal-600 rounded-md
+         cursor-pointer hover:bg-teal-800;
+}
