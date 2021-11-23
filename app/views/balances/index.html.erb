@@ -24,8 +24,8 @@
             <td class="text-center"><%= number_to_currency(balance.amount) %></td>
             <td class="text-center"><%= time_ago_in_words balance.created_at %><%= " ago" %></td>
             <td class="text-center"><%= time_ago_in_words balance.updated_at %><%= " ago" %></td>
-            <td class="text-center"><%= link_to "Edit Balance", edit_balance_path(balance), class: "my-4 px-4 py-2 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800" %></td>
-            <td class="text-center"><%= button_to "Delete Balance", balance_path(balance), method: :delete, class: "my-3 px-3 py-2 text-sm font-semibold text-center text-white transition duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800" %></td>
+            <td class="text-center"><%= link_to "Edit Balance", edit_balance_path(balance), class: "edit-btn" %></td>
+            <td class="text-center"><%= button_to "Delete Balance", balance_path(balance), method: :delete, class: "delete-btn" %></td>
           </tr>
         <% end %>
      </tbody>

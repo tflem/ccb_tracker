@@ -32,4 +32,5 @@ console.log(
 // Example: Import a stylesheet in app/frontend/index.css
 // import '~/index.css'
 import "virtual:windi.css";
+import "~/stylesheets/balances.scss"
 import "~/stylesheets/welcome.scss"
