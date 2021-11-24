@@ -2,7 +2,7 @@
   <div class="w-128 p-6">
     <%= form_with(model: [balance, note], local: true) do |form| %>
       <% if note.errors.any? %>
-        <div class="w-full text-center py-3 text-red-500">
+        <div class="error">
           <h2>You've got <%= pluralize(note.errors.count, "error") %>
               here friend:</h2>
           <ul>
@@ -14,13 +14,13 @@
       <% end %>
       <div class="field">
         <%= form.label :name %>
-        <%= form.text_field :name, class: "block border border-gray-300 w-full p-3 rounded mb-4" %>
+        <%= form.text_field :name, class: "form-input" %>
       </div>
       <div class="field">
         <%= form.label :description %>
-        <%= form.text_area :description, class: "block border border-gray-300 w-full p-3 rounded mb-4" %>
+        <%= form.text_area :description, class: "form-input" %>
       </div>
-      <%= form.submit class: "w-full text-center py-3 rounded bg-teal-600 text-white hover:bg-teal-800 focus:outline-none" %>
+      <%= form.submit class: "submit-btn" %>
     <% end %>
   </div>
 </div>

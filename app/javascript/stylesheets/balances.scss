@@ -10,3 +10,16 @@
   @apply my-3 px-3 py-2 text-sm font-semibold text-center text-white transition
          duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800
 }
+
+.error {
+  @apply w-full text-center py-3 text-red-500
+}
+
+.form-input {
+  @apply block border border-gray-300 w-full p-3 rounded mb-4
+}
+
+.submit-btn {
+  @apply w-full text-center py-3 rounded bg-teal-600 text-white
+         hover:bg-teal-800 focus:outline-none
+}
