@@ -1,14 +1,20 @@
 // Place all the styles related to the balances controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+.th-styling {
+  @apply text-center py-2 px-3 font-semibold text-sm
+}
+
 .edit-btn {
   @apply my-4 px-4 py-2 text-sm font-semibold text-center text-white transition
-         duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800
+         duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer
+         hover:bg-teal-800
 }
 
 .delete-btn {
   @apply my-3 px-3 py-2 text-sm font-semibold text-center text-white transition
-         duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer hover:bg-teal-800
+         duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer
+         hover:bg-teal-800
 }
 
 .error {
