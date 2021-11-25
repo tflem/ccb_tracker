@@ -19,10 +19,10 @@
       </thead>
       <tbody class="text-gray-700">
         <tr>
-          <td class="text-center py-3 px-4"><%= @balance.id %></td>
-          <td class="text-center py-3 px-4"><%= @balance.name %></td>
-          <td class="text-center py-3 px-4"><%= number_to_currency(@balance.amount) %></td>
-          <td class="text-center py-3 px-4"><%= time_ago_in_words @balance.created_at %><%= " ago" %></td>
+          <td class="td-styling"><%= @balance.id %></td>
+          <td class="td-styling"><%= @balance.name %></td>
+          <td class="td-styling"><%= number_to_currency(@balance.amount) %></td>
+          <td class="td-styling"><%= time_ago_in_words @balance.created_at %><%= " ago" %></td>
         </tr>
      </tbody>
    </table>
