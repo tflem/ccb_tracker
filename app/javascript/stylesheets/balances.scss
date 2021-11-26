@@ -9,6 +9,12 @@
   @apply text-center py-3 px-4
 }
 
+.main-btn {
+  @apply my-4 px-4 py-3 text-sm font-semibold text-center text-white transition
+         duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer
+         hover:bg-teal-800
+}
+
 .edit-btn {
   @apply my-4 px-4 py-2 text-sm font-semibold text-center text-white transition
          duration-200 ease-in-out bg-teal-600 rounded-md cursor-pointer
