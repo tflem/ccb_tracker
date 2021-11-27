@@ -1,6 +1,8 @@
 <div class="flex">
   <div class="m-auto">
-    <h1 class="text-4xl py-8">Note Details</h1>
+    <h1 class="text-4xl py-8">
+      Note Details
+    </h1>
   </div>
 </div>
 
@@ -9,18 +11,35 @@
     <table class="min-w-full bg-white">
       <thead class="bg-teal-700 text-white">
         <tr>
-          <th class="th-styling">Balance Name</th>
-          <th class="th-styling">Note Name</th>
-          <th class="th-styling">Description</th>
-          <th class="th-styling">Time Created</th>
+          <th class="th-styling">
+            Balance Name
+          </th>
+          <th class="th-styling">
+            Note Name
+          </th>
+          <th class="th-styling">
+            Description
+          </th>
+          <th class="th-styling">
+            Time Created
+          </th>
         </tr>
       </thead>
       <tbody class="text-gray-700">
         <tr>
-          <td class="td-styling"><%= @balance.name %></td>
-          <td class="td-styling"><%= @note.name %></td>
-          <td class="td-styling"><%= simple_format(@note.description) %></td>
-          <td class="td-styling"><%= time_ago_in_words @balance.created_at %><%= " ago" %></td>
+          <td class="td-styling">
+            <%= @balance.name %>
+          </td>
+          <td class="td-styling">
+            <%= @note.name %>
+          </td>
+          <td class="td-styling">
+            <%= simple_format(@note.description) %>
+          </td>
+          <td class="td-styling">
+            <%= time_ago_in_words @balance.created_at %>
+            <%= " ago" %>
+          </td>
         </tr>
      </tbody>
    </table>
