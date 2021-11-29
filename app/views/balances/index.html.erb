@@ -35,8 +35,9 @@
               <%= " ago" %>
             </td>
             <td class="text-center">
-              <%= link_to "Edit Balance",
+              <%= button_to "Edit Balance",
                   edit_balance_path(balance),
+                  method: :get,
                   class: "edit-btn"
                %>
             </td>
@@ -44,6 +45,11 @@
               <%= button_to "Delete Balance",
                   balance_path(balance),
                   method: :delete,
+                  form: {
+                    data: {
+                      "turbo-confirm": "You sure friend?"
+                    }
+                  },
                   class: "delete-btn" %>
             </td>
           </tr>

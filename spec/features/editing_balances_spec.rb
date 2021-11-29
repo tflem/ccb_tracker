@@ -6,7 +6,7 @@ RSpec.describe "Our users can edit balances" do
                                 amount: 67.45)
     visit "/"
     click_link "View Balances"
-    click_link "Edit Balance"
+    click_button "Edit Balance"
   end
 
   scenario "with valid balance data" do
