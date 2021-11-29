@@ -9,6 +9,7 @@
     "windicss": "^3.2.1"
   },
   "dependencies": {
+    "@hotwired/turbo-rails": "^7.1.0",
     "sass": "^1.43.4"
   }
 }
