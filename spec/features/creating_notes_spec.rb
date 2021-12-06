@@ -11,7 +11,7 @@ RSpec.describe "Our users can create new notes" do
 
   scenario "with valid attributes" do
     fill_in "Name", with: "Gas Card"
-    fill_in "Description", with: "This is a gas card from MasterCard."
+    fill_in "Description", with: "This is a gas card from Costco."
     click_button "Create Note"
 
     expect(page).to have_content "Your note has been created."
