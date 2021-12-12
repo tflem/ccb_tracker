@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Our users can edit balances" do
+RSpec.feature "Our users can edit balances" do
   before do
     FactoryBot.create(:balance, name: "Costco Credit Card",
                                 amount: 67.45)

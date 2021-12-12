@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Our users can create new notes" do
+RSpec.feature "Our users can create new notes" do
   before do
     balance = FactoryBot.create(:balance, name: "Costco Credit Card",
                                           amount: 67.45)

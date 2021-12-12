@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.describe "Users can create new balance data" do
+RSpec.feature "Users can create new balance data" do
   before do
     visit "/"
 
