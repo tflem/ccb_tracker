@@ -49,7 +49,7 @@ class BalancesController < ApplicationController
   def set_balance
     @balance = Balance.find(params[:id])
   rescue ActiveRecord::RecordNotFound
-    flash[:alert] = "The balance you're trying to view does not exist."
+    flash[:alert] = "The balance you"re trying to view does not exist."
     redirect_to balances_path
   end
 

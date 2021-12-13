@@ -3,7 +3,7 @@
     <%= form_with(model: [balance, note], local: true) do |form| %>
       <% if note.errors.any? %>
         <div class="error">
-          <h2>You've got <%= pluralize(note.errors.count, "error") %>
+          <h2>You"ve got <%= pluralize(note.errors.count, "error") %>
               here friend:</h2>
           <ul>
             <% note.errors.full_messages.each do |message| %>

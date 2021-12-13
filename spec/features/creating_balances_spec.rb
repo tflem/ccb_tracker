@@ -25,7 +25,7 @@ RSpec.feature "Users can create new balance data" do
     click_button "Create Balance"
 
     expect(page).to have_content "Your credit card balance has not been created."
-    expect(page).to have_content "Name can't be blank"
+    expect(page).to have_content "Name can"t be blank"
     expect(page).to have_content "Amount is not a number"
   end
 
