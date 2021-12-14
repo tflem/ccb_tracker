@@ -23,8 +23,8 @@ end
 
 group :test do
   gem "capybara", "~> 3.35", ">= 3.35.3"
-  #gem "selenium-webdriver"
-  gem "webdrivers"
+  gem "selenium-webdriver"
+  gem "webdrivers", "~> 5.0"
   gem "simplecov", "~> 0.21.2"
   gem "simplecov_json_formatter", "~> 0.1.3"
   gem "factory_bot_rails", "~> 6.2"

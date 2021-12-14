@@ -1,6 +1,6 @@
 require "rails_helper"
 
-RSpec.feature "Our users can view balances" do
+RSpec.describe "Our users can view balances" do
   scenario "with the balance data" do
     balance = FactoryBot.create(:balance, name: "Costco Credit Card",
                                           amount: 67.45)
