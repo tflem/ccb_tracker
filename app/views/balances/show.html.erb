@@ -21,10 +21,10 @@
           </th>
           <th class="th-styling">
             Credit Card Amount
-          </th>           
+          </th>
           <th class="th-styling">
             Time Created
-          </th>                  
+          </th>
         </tr>
       </thead>
       <tbody class="text-gray-700">
@@ -41,27 +41,27 @@
           <td class="td-styling">
             <%= time_ago_in_words @balance.created_at %>
             <%= " ago" %>
-          </td>                          
+          </td>
         </tr>
      </tbody>
    </table>
- </div> 
+ </div>
 </div>
 
 <div class="flex">
   <div class="m-auto">
     <h3 class="text-2xl py-3">
-      Credit Card Notes
+      Account Balance Notes
     </h3>
   </div>
 </div>
 
-<div class="md:px-32 py-2 w-full">   
+<div class="md:px-32 py-2 w-full">
     <ul>
-      <% @balance.notes.each do |note| %>              
+      <% @balance.notes.each do |note| %>
         <li class="py-4 hover:text-teal-800"><%= link_to note.name, [@balance, note] %></li><hr />
       <% end %>
-    </ul>  
+    </ul>
 
   <button class="main-btn">
     <%= link_to "Add Balances", new_balance_path %>
