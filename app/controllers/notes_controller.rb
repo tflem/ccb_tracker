@@ -14,7 +14,7 @@ class NotesController < ApplicationController
       redirect_to balance_note_path(@balance, @note)
     else
       flash.now[:alert] = "Your note has not been created."
-      render "new"
+      render :new
     end
   end
 
