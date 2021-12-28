@@ -4,9 +4,9 @@
 
 # The CCB Tracker
 
-> A new and improved credit card balance tracking application, developed with the following tools:
+> A new and improved credit card balance tracking application, developed with the following:
 
-- CSS Framework: Windi CSS (Tailwind Alternative) 3.4.0
+- CSS Framework: Windi CSS (A Tailwind Alternative) 3.4.0
 - Ruby on Rails 6.1.4.1
 - Ruby 3.0.2
 - HTML5 and Sass 1.45.1
