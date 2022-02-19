@@ -7,12 +7,12 @@
 > A new and improved credit card balance tracking application, developed with the following:
 
 - CSS Framework: Windi CSS (A Tailwind Alternative) 3.4.3
-- Ruby on Rails 6.1.4.4
+- Ruby on Rails 6.1.4.6
 - Ruby 3.1.0
 - HTML5 and Sass 1.49.7
 - PostgreSQL (Tested With Version 13.x)
 - Testing Framework: RSpec Rails 5.0
-- Code Bundler: Vite ⚡️ Ruby (2.7.13, 3.0.8)
+- Code Bundler: Vite ⚡️ Ruby (2.8.3, 3.0.8)
 - Continuous Integration/Deployment: Github Actions/Heroku
 
 ## Setup
@@ -44,8 +44,3 @@ How to prepare (create and migrate) DB for `development` and `test` environments
 ```
 
 The application is viewable at http://ccb-tracker.herokuapp.com.
-
-## License
-[MIT](https://opensource.org/licenses/MIT)
-
-Copyright (c) 2021-Present, Tim Fleming
