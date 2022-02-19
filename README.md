@@ -44,3 +44,8 @@ How to prepare (create and migrate) DB for `development` and `test` environments
 ```
 
 The application is viewable at http://ccb-tracker.herokuapp.com.
+
+## License
+[MIT](https://opensource.org/licenses/MIT)
+
+Copyright (c) 2021-Present, Tim Fleming
