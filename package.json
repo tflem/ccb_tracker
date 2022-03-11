@@ -5,8 +5,8 @@
     "vite": "^2.8.6",
     "vite-plugin-full-reload": "^1.0.0",
     "vite-plugin-ruby": "^3.0.8",
-    "vite-plugin-windicss": "^1.8.1",
-    "windicss": "^3.5.0"
+    "vite-plugin-windicss": "^1.8.3",
+    "windicss": "^3.5.1"
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^7.1.1",
