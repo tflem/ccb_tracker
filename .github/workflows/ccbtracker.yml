@@ -16,9 +16,8 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "14"
-      - run: npm install -g yarn
-      - run: yarn install
+          node-version: "16"
+      - run: npm install
 
       - uses: actions/checkout@v2
 
