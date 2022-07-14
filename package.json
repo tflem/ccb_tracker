@@ -3,7 +3,7 @@
     "node": "16.x"
   },
   "scripts": {
-    "heroku-prebuild": "npm install --legacy-peer-deps"
+    "build": "npm install --legacy-peer-deps"
   },
   "devDependencies": {
     "@types/node": "^18.0.4",
