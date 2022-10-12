@@ -10,10 +10,10 @@
 - Ruby on Rails 7.0.4
 - Ruby 3.1.2
 - HTML5 and Sass 1.55.0
-- Hotwired/Turbo-Rails 7.2.0
+- Hotwired/Turbo-Rails 7.2.2
 - PostgreSQL (Tested With Version 14.x)
 - Testing Framework: RSpec Rails 5.1.2
-- Code Bundler: Vite ⚡️ Ruby (3.1.4, 3.1.2)
+- Code Bundler: Vite ⚡️ Ruby (3.1.7, 3.1.2)
 - Continuous Integration/Deployment: Github Actions/Heroku
 
 ## Setup
