@@ -44,4 +44,4 @@ How to prepare (create and migrate) DB for `development` and `test` environments
 % rails db:migrate
 ```
 
-The application is viewable at http://ccb-tracker.herokuapp.com.
+The application is viewable at https://app.ccbtracker.teeflem.xyz.
