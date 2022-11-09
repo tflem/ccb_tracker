@@ -14,7 +14,7 @@
 - PostgreSQL (Tested With Version 14.x)
 - Testing Framework: RSpec Rails 5.1.2
 - Code Bundler: Vite ⚡️ Ruby (3.2.3, 3.1.2)
-- Continuous Integration/Deployment: Github Actions/Heroku
+- Continuous Integration/Deployment: Github Actions/Digital Ocean
 
 ## Setup
 
