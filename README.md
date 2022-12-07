@@ -14,7 +14,7 @@
 - PostgreSQL (Tested With Version 14.x)
 - Testing Framework: RSpec Rails 5.1.2
 - Continuous Integration/Deployment: Github Actions/Digital Ocean
-- Code Bundler: Vite ⚡️ Ruby ⚡️ Windi CSS Plugin (3.2.4, 3.1.2, 1.8.8)
+- Code Bundler: Vite ⚡️ Ruby ⚡️ Windi CSS Plugin (3.2.5, 3.1.3, 1.8.8)
 
 ## Setup
 
