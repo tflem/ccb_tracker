@@ -10,7 +10,7 @@
 - Ruby on Rails 7.0.4.2
 - Ruby 3.1.2
 - HTML5 and Sass 1.58.3
-- Hotwired/Turbo-Rails 7.2.5
+- Hotwired/Turbo-Rails 7.3.0
 - PostgreSQL (Tested With Version 15.x)
 - Testing Framework: RSpec Rails 5.1.2
 - Continuous Integration/Deployment: Github Actions/Digital Ocean
