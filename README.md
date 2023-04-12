@@ -9,7 +9,7 @@
 - CSS Framework: Windi CSS 3.5.6 - Tailwind Alternative
 - Ruby on Rails 7.0.4.3
 - Ruby 3.1.2
-- HTML5 and Sass 1.60.0
+- HTML5 and Sass 1.62.0
 - Hotwired/Turbo-Rails 7.3.0
 - PostgreSQL (Tested With Version 15.x)
 - Testing Framework: RSpec Rails 5.1.2
