@@ -3,11 +3,11 @@
     "node": "16.x"
   },
   "devDependencies": {
-    "@types/node": "^18.16.1",
+    "@types/node": "^18.16.3",
     "typescript": "^5.0.4",
-    "vite": "^4.3.3",
+    "vite": "^4.3.4",
     "vite-plugin-full-reload": "^1.0.5",
-    "vite-plugin-ruby": "^3.2.1",
+    "vite-plugin-ruby": "^3.2.2",
     "vite-plugin-windicss": "^1.8.10",
     "windicss": "^3.5.6"
   },
