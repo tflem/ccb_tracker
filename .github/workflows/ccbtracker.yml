@@ -16,14 +16,14 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "16"
+          node-version: "18"
       - run: npm install --legacy-peer-deps
 
       - uses: actions/checkout@v2
 
       - uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.1.2
+          ruby-version: 3.2.2
 
       - name: Install dependent libraries
         run: sudo apt-get install libpq-dev
