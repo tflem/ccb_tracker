@@ -3,16 +3,16 @@
     "node": "18.x"
   },
   "devDependencies": {
-    "@types/node": "^20.4.9",
+    "@types/node": "^20.5.0",
     "typescript": "^5.1.6",
     "vite": "^4.4.9",
     "vite-plugin-full-reload": "^1.0.5",
     "vite-plugin-ruby": "^3.2.2",
-    "vite-plugin-windicss": "^1.9.0",
+    "vite-plugin-windicss": "^1.9.1",
     "windicss": "^3.5.6"
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^7.3.0",
-    "sass": "^1.64.2"
+    "sass": "^1.65.1"
   }
 }
