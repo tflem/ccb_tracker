@@ -7,14 +7,14 @@
 > A new and improved credit card balance tracking application, developed with the following:
 
 - CSS Framework: Windi CSS 3.5.6 - Tailwind Alternative
-- Ruby on Rails 7.0.8
+- Ruby on Rails 7.1.2
 - Ruby 3.2.2
-- HTML5 and Sass 1.68.0
+- HTML5 and Sass 1.69.5
 - Hotwired/Turbo-Rails 7.3.0
-- PostgreSQL (Tested With Version 15.x)
-- Testing Framework: RSpec Rails 5.1.2
+- PostgreSQL (Tested With Version 16.x)
+- Testing Framework: RSpec Rails 6.1.0
 - Continuous Integration/Deployment: Github Actions/Digital Ocean
-- Code Bundler: Vite ⚡️ Ruby ⚡️ Windi CSS Plugin (4.4.10, 3.2.2, 1.9.1)
+- Code Bundler: Vite ⚡️ Ruby ⚡️ Windi CSS Plugin (5.0.8, 3.2.2, 1.9.2)
 
 ## Setup
 
