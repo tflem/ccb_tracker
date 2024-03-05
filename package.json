@@ -3,9 +3,9 @@
     "node": "18.x"
   },
   "devDependencies": {
-    "@types/node": "^20.11.20",
+    "@types/node": "^20.11.24",
     "typescript": "^5.3.3",
-    "vite": "^5.1.4",
+    "vite": "^5.1.5",
     "vite-plugin-full-reload": "^1.1.0",
     "vite-plugin-ruby": "^5.0.0",
     "vite-plugin-windicss": "^1.9.3",
