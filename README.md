@@ -10,11 +10,11 @@
 - Ruby on Rails 7.1.3.2
 - Ruby 3.2.2
 - HTML5 and Sass 1.71.1
-- Hotwired/Turbo-Rails 8.0.3
+- Hotwired/Turbo-Rails 8.0.4
 - PostgreSQL (Tested With Version 16.x)
 - Testing Framework: RSpec Rails 6.1.1
 - Continuous Integration/Deployment: Github Actions/Digital Ocean
-- Code Bundler: Vite ⚡️ Ruby ⚡️ Windi CSS Plugin (5.1.5, 5.0.0, 1.9.3)
+- Code Bundler: Vite ⚡️ Ruby ⚡️ Windi CSS Plugin (5.1.6, 5.0.0, 1.9.3)
 
 ## Setup
 
