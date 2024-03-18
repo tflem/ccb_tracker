@@ -3,7 +3,7 @@
     "node": "18.x"
   },
   "devDependencies": {
-    "@types/node": "^20.11.26",
+    "@types/node": "^20.11.29",
     "typescript": "^5.4.2",
     "vite": "^5.1.6",
     "vite-plugin-full-reload": "^1.1.0",
@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^8.0.4",
-    "sass": "^1.71.1"
+    "sass": "^1.72.0"
   }
 }
