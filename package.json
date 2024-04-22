@@ -5,7 +5,7 @@
   "devDependencies": {
     "@types/node": "^20.12.7",
     "typescript": "^5.4.5",
-    "vite": "^5.2.8",
+    "vite": "^5.2.10",
     "vite-plugin-full-reload": "^1.1.0",
     "vite-plugin-ruby": "^5.0.0",
     "vite-plugin-windicss": "^1.9.3",
