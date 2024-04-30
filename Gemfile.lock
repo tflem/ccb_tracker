@@ -203,7 +203,7 @@ GEM
     rdoc (6.6.3.1)
       psych (>= 4.0.0)
     regexp_parser (2.9.0)
-    reline (0.5.2)
+    reline (0.5.4)
       io-console (~> 0.5)
     rexml (3.2.6)
     rouge (4.2.1)
@@ -235,7 +235,7 @@ GEM
       sprockets (> 3.0)
       sprockets-rails
       tilt
-    selenium-webdriver (4.19.0)
+    selenium-webdriver (4.20.1)
       base64 (~> 0.2)
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
