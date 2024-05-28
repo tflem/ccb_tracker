@@ -5,7 +5,7 @@ jobs:
     runs-on: ubuntu-latest
     services:
       postgres:
-        image: postgres:16.1
+        image: postgres:16.2
         ports:
           - 5432:5432
         env:
@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@master
       - uses: actions/setup-node@master
         with:
-          node-version: "18"
+          node-version: "20"
       - run: npm install --legacy-peer-deps
 
       - uses: actions/checkout@v2
