@@ -206,7 +206,7 @@ GEM
     regexp_parser (2.9.2)
     reline (0.5.9)
       io-console (~> 0.5)
-    rexml (3.3.2)
+    rexml (3.3.4)
       strscan
     rouge (4.3.0)
     rspec-core (3.13.0)
@@ -252,7 +252,7 @@ GEM
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
-    sprockets-rails (3.5.1)
+    sprockets-rails (3.5.2)
       actionpack (>= 6.1)
       activesupport (>= 6.1)
       sprockets (>= 3.0.0)
