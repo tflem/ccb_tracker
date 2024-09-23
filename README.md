@@ -9,12 +9,12 @@
 - CSS Framework: Windi CSS 3.5.6 - Tailwind Alternative
 - Ruby on Rails 7.1.4
 - Ruby 3.3.2
-- HTML5 and Sass 1.78.0
-- Hotwired/Turbo-Rails 8.0.9
+- HTML5 and Sass 1.79.3
+- Hotwired/Turbo-Rails 8.0.10
 - PostgreSQL (Tested With Version 16.x)
 - Testing Framework: RSpec Rails 6.1.5
 - Continuous Integration/Deployment: Github Actions/Digital Ocean
-- Code Bundler: Vite ⚡️ Ruby ⚡️ Windi CSS Plugin (5.4.5, 5.1.0, 1.9.3)
+- Code Bundler: Vite ⚡️ Ruby ⚡️ Windi CSS Plugin (5.4.7, 5.1.0, 1.9.3)
 
 ## Setup
 
