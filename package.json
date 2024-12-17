@@ -13,6 +13,6 @@
   },
   "dependencies": {
     "@hotwired/turbo-rails": "^8.0.12",
-    "sass": "^1.82.0"
+    "sass": "^1.83.0"
   }
 }
