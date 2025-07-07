@@ -1,5 +1,5 @@
 ![CCB Tracker workflow](https://github.com/tflem/ccb_tracker/actions/workflows/ccbtracker.yml/badge.svg)
-[![Maintainability](https://api.codeclimate.com/v1/badges/e4c19498a08452767121/maintainability)](https://codeclimate.com/github/tflem/ccb_tracker/maintainability)
+[![Maintainability](https://qlty.sh/gh/tflem/projects/ccb_tracker/maintainability.svg)](https://qlty.sh/gh/tflem/projects/ccb_tracker)
 [![Test Coverage](https://api.codeclimate.com/v1/badges/e4c19498a08452767121/test_coverage)](https://codeclimate.com/github/tflem/ccb_tracker/test_coverage)
 
 # The CCB Tracker
