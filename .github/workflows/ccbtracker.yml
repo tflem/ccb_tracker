@@ -56,11 +56,4 @@ jobs:
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-
-      - name: Publish code coverage
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.QLTY_COVERAGE_TOKEN }}
-        run: |
-          export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
-          ./cc-test-reporter after-build -r $CC_TEST_REPORTER_ID
+          POSTGRES_PASSWORD: postgres 
