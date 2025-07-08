@@ -38,19 +38,12 @@ jobs:
           bundle exec vite install
 
       - name: Setup Database
-        run: |
-          cp config/database.yml.github-actions config/database.yml
+        run: |          
           bundle exec rake db:create
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres
-
-      - name: Setup Code Climate test-reporter
-        run: |
-          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
-          chmod +x ./cc-test-reporter
-          ./cc-test-reporter before-build
+          POSTGRES_PASSWORD: postgres      
 
       - name: Run RSpec
         run: COVERAGE=true bundle exec rspec  --require rails_helper
@@ -58,10 +51,3 @@ jobs:
           RAILS_ENV: test
           POSTGRES_USER: postgres
           POSTGRES_PASSWORD: postgres
-
-      - name: Publish code coverage
-        env:
-          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
-        run: |
-          export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
-          ./cc-test-reporter after-build -r $CC_TEST_REPORTER_ID
