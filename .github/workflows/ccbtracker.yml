@@ -27,11 +27,6 @@ jobs:
       - uses: ruby/setup-ruby@v1
         with:
           ruby-version: 3.4.4
-      
-      - uses: qltysh/qlty-action/coverage@v1
-        with:
-          token: {{secrets.QLTY_COVERAGE_TOKEN}}
-          files: coverage/.resultset.json
 
       - name: Install dependent libraries
         run: sudo apt-get install libpq-dev
@@ -41,10 +36,26 @@ jobs:
           gem install bundler
           bundle install
           bundle exec vite install
-     
+
+      - name: Setup Database
+        run: |
+          cp config/database.yml.github-actions config/database.yml
+          bundle exec rake db:create
+        env:
+          RAILS_ENV: test
+          POSTGRES_USER: postgres
+          POSTGRES_PASSWORD: postgres    
+
       - name: Run RSpec
         run: COVERAGE=true bundle exec rspec  --require rails_helper
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres  
+          POSTGRES_PASSWORD: postgres
+
+      - name: Publish code coverage
+        - uses: qltysh/qlty-action/coverage@v1
+          with:
+            token: {{secrets.QLTY_COVERAGE_TOKEN}}
+            files: coverage/.resultset.json
+
