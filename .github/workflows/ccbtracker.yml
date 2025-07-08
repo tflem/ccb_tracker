@@ -44,7 +44,13 @@ jobs:
         env:
           RAILS_ENV: test
           POSTGRES_USER: postgres
-          POSTGRES_PASSWORD: postgres    
+          POSTGRES_PASSWORD: postgres
+
+      - name: Setup Code Climate test-reporter
+        run: |
+          curl -L https://codeclimate.com/downloads/test-reporter/test-reporter-latest-linux-amd64 > ./cc-test-reporter
+          chmod +x ./cc-test-reporter
+          ./cc-test-reporter before-build
 
       - name: Run RSpec
         run: COVERAGE=true bundle exec rspec  --require rails_helper
@@ -54,8 +60,8 @@ jobs:
           POSTGRES_PASSWORD: postgres
 
       - name: Publish code coverage
-        - uses: qltysh/qlty-action/coverage@v1
-          with:
-            token: {{secrets.QLTY_COVERAGE_TOKEN}}
-            files: coverage/.resultset.json
-
+        env:
+          CC_TEST_REPORTER_ID: ${{ secrets.CC_TEST_REPORTER_ID }}
+        run: |
+          export GIT_BRANCH="${GITHUB_REF/refs\/heads\//}"
+          ./cc-test-reporter after-build -r $CC_TEST_REPORTER_ID
