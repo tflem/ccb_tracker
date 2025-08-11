@@ -17,7 +17,7 @@ class BalancesController < ApplicationController
       redirect_to @balance
     else
       flash.now[:alert] = "Your credit card balance has not been created."
-      render :new, status: :unprocessable_entity
+      render :new, status: :unprocessable_content
     end
   end
 
