@@ -20,7 +20,7 @@ jobs:
       - uses: actions/setup-node@master
         with:
           node-version: "22"
-      - run: npm install --legacy-peer-deps
+      - run: npm install
 
       - uses: actions/checkout@v2
 
