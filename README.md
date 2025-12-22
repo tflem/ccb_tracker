@@ -8,7 +8,7 @@
 - CSS Framework: Windi CSS 3.5.6 - Tailwind Alternative
 - Ruby on Rails 8.0.3
 - Ruby 3.4.7
-- HTML5 and Sass 1.95.0
+- HTML5 and Sass 1.97.1
 - Hotwired/Turbo-Rails 8.0.16
 - PostgreSQL (Tested With Version 18.x)
 - Testing Framework: RSpec Rails 8.0.2
@@ -43,4 +43,4 @@ How to prepare (create and migrate) DB for `development` and `test` environments
 % rails db:migrate
 ```
 
-The application is viewable at https://app.ccbtracker.teeflem.xyz.
+The application is viewable at https://app.ccbtracker.teeflem.work.
