@@ -1,12 +1,13 @@
 source "https://rubygems.org"
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby "3.4.7"
+ruby "3.4.8"
 
 gem "rails", "~>8.0.2"
 gem "pg", "~> 1.2", ">= 1.2.3"
 gem "puma", "~> 6.4"
 gem "sass-rails", ">= 6"
+gem "sassc", "~> 2.1.0"
 gem "vite_rails"
 gem "rexml", "~> 3.2", ">= 3.2.5"
 
