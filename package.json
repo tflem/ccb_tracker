@@ -3,9 +3,9 @@
     "node": "22.x"
   },
   "devDependencies": {
-    "@types/node": "^25.5.2",
+    "@types/node": "^25.6.0",
     "typescript": "^6.0.2",
-    "vite": "^8.0.5",
+    "vite": "^8.0.8",
     "vite-plugin-full-reload": "^1.2.0",
     "vite-plugin-ruby": "^5.2.1",
     "vite-plugin-windicss": "^1.9.4",
